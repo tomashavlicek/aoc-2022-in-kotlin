@@ -2,7 +2,6 @@ package Day4
 
 import readInput
 import containsFull
-import overlaps
 
 fun main() {
 
@@ -24,7 +23,7 @@ fun main() {
                 IntRange(parts[0].toInt(), parts[1].toInt())
             }
         }.count { parts ->
-            return@count parts.first().overlaps(parts.last())
+            return@count parts.first().intersect(parts.last()).isNotEmpty()
         }
     }
 
